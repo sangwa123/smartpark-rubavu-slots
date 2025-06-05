@@ -1,10 +1,12 @@
-
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 
 const DemoPreview = () => {
+  const navigate = useNavigate();
+  
   const mockData = [
     { slot: "A-01", plate: "RAE 123B", timeIn: "09:30", status: "Occupied", duration: "2h 15m" },
     { slot: "A-02", plate: "RAD 456C", timeIn: "10:45", status: "Occupied", duration: "1h 30m" },
@@ -77,7 +79,10 @@ const DemoPreview = () => {
         </Card>
         
         <div className="text-center mt-8">
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl text-lg font-semibold">
+          <Button 
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-xl text-lg font-semibold"
+            onClick={() => navigate('/dashboard')}
+          >
             View Full Dashboard
           </Button>
         </div>

@@ -1,8 +1,11 @@
 
 import { Button } from "@/components/ui/button";
 import { Car, MapPin } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="px-6 py-20 bg-gradient-to-br from-slate-50 to-white">
       <div className="max-w-6xl mx-auto text-center">
@@ -27,7 +30,12 @@ const Hero = () => {
           <Button size="lg" className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl text-lg font-semibold">
             Get a Slot
           </Button>
-          <Button variant="outline" size="lg" className="border-slate-300 text-slate-700 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-slate-50">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="border-slate-300 text-slate-700 px-8 py-4 rounded-xl text-lg font-semibold hover:bg-slate-50"
+            onClick={() => navigate('/dashboard')}
+          >
             View Dashboard
           </Button>
         </div>
